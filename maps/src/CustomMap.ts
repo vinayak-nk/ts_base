@@ -1,7 +1,10 @@
 /// <reference types="@types/google.maps" />
-
-import { User } from "./User"
-import { Company } from './Company';
+interface Mappable {
+  location: {
+    lat: number,
+    lng: number,
+  }
+}
 
 export class CustomMap {
   private googleMap: google.maps.Map
@@ -24,7 +27,9 @@ export class CustomMap {
   }
 
 
-  async addMarker(mappable: User | Company): Promise<void> {
+
+
+  async addMarker(mappable: Mappable): Promise<void> {
     const { AdvancedMarkerElement } = await google.maps.importLibrary("marker") as google.maps.MarkerLibrary;
     const marker = new AdvancedMarkerElement({
       map: this.googleMap,
