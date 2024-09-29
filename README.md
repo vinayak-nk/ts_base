@@ -19,3 +19,9 @@ type -> props and functions a variable has.
 
 inference -> typescript guesses the type
 annotations -> manually give type
+
+===
+
+Application
+
+RUN: ./maps -> npx parcel index.html
